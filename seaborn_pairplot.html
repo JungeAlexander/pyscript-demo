@@ -3,6 +3,8 @@
       <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
       <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
       <py-env>
+        - numpy
+        - pandas
         - seaborn
       </py-env>
     </head>
@@ -12,11 +14,18 @@
     <div id="plot"></div>
     <py-script output="plot">
 
+import numpy as np
+import pandas as pd
 import seaborn as sns
 sns.set_theme(style="ticks")
 
-df = sns.load_dataset("penguins")
-sns.pairplot(df, hue="species")
+x = np.random.randn(1000)
+y = np.random.randn(1000)
+y = np.random.randn(1000)
+c = ["A"] * 500 + ["B"] * 500
+        
+df = pd.DataFrame({"x": x, "y": y, "z": z, "color": c})
+sns.pairplot(df, hue="color")
     </py-script>
   </body>
 </html>
